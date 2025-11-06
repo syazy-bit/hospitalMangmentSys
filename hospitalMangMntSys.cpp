@@ -43,7 +43,7 @@ public:
     string ward;
     int roomNo;
     int fees;
-    string status; // ✅ New field for patient status
+    string status; //  New field for patient status
 
     // Convert patient to string for file storage
     string toString()
@@ -176,13 +176,13 @@ void addPatient()
     p.ward = wardRoom.first;
     p.roomNo = wardRoom.second;
     p.fees = calculateFees(p.ward);
-    p.status = "Admitted"; // ✅ default status
+    p.status = "Admitted"; //  default status
 
     ofstream fout("patients.txt", ios::app);
     fout << p.toString() << "\n";
     fout.close();
 
-    cout << "✅ Patient added successfully!\n";
+    cout << " Patient added successfully!\n";
     p.display();
 }
 
@@ -215,7 +215,7 @@ void searchPatient()
         Patient p = Patient::fromString(line);
         if (p.id == searchId)
         {
-            cout << "\n✅ Patient Found:\n";
+            cout << "\n Patient Found:\n";
             p.display();
             found = true;
             break;
@@ -224,7 +224,7 @@ void searchPatient()
     fin.close();
 
     if (!found)
-        cout << "❌ Patient not found.\n";
+        cout << " Patient not found.\n";
 }
 
 // Update Patient Status
@@ -260,9 +260,9 @@ void updateStatus()
     ::rename("temp.txt", "patients.txt");
 
     if (updated)
-        cout << "✅ Patient status updated successfully!\n";
+        cout << " Patient status updated successfully!\n";
     else
-        cout << "❌ Patient not found.\n";
+        cout << " Patient not found.\n";
 }
 
 // Main Menu
@@ -275,7 +275,7 @@ int main()
         cout << "1. Add Patient\n";
         cout << "2. View All Patients\n";
         cout << "3. Search Patient\n";
-        cout << "4. Update Patient Status\n"; // ✅ replaced delete
+        cout << "4. Update Patient Status\n"; //  replaced delete
         cout << "5. Exit\n";
         cout << "Enter choice: ";
         cin >> choice;
@@ -304,3 +304,4 @@ int main()
 
     return 0;
 }
+
